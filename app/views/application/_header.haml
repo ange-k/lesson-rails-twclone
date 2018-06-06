@@ -1,0 +1,17 @@
+%header#app--header
+  %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    %a.navbar-brand{href: "#{root_path}"}
+      TW-CLONE
+    %button.navbar-toggler{ type: 'button', 'data-toggle': 'collapse', 'data-target': '#navbarNavAltMarkup',
+                            'aria-controls': 'navbarNavAltMarkup', 'aria-expanded': 'false', 'aria-label': 'Toggle navigation'}
+      %span.navbar-toggler-icon
+    .collapse.navbar-collapse{id: 'navbarNavAltMarkup' }
+      %ul.navbar-nav.ml-auto
+        %li.nav-item
+          = link_to 'Home', root_path, class: 'nav-link'
+        %li.nav-item
+          Signup
+        %li.nav-item
+          Login
+        %li.nav-item
+          Logout
