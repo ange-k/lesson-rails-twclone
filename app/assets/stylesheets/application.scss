@@ -13,7 +13,8 @@
  */
 
 // pages
-@import 'pages/top_pages.scss';
+@import 'pages/top_pages';
+@import "pages/microposts";
 
 //template
 @import "template/_valiables";
