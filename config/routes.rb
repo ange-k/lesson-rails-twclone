@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  get 'microposts/create'
-
-  get 'microposts/show'
-
-  get 'microposts/destroy'
+  resources :microposts, only: [:create, :show, :destroy]
 
   devise_for :users
   root to: 'top_pages#index'
