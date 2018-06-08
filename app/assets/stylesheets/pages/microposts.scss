@@ -1,3 +1,22 @@
 // Place all the styles related to the Microposts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#micro-post-list {
+
+  .card-title {
+    display: inline;
+  }
+
+  .card-sub-title {
+    display: inline;
+  }
+
+  .tw-card {
+
+    .card-sub-title {
+      font-size: 12px;
+    }
+
+  }
+}

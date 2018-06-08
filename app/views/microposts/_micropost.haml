@@ -1,6 +1,13 @@
-.card
-  .email
-    = post.user.email
-  .content
-    = post.content
+.card.tw-card
+  .card-body
+    %h5.card-title
+      = post.user.name
+    %h6.card-sub-title.text-muted
+      = "<#{post.user.email}>"
+    %hr
+    %p.card-text
+      = post.content
+    %hr
+    .text-right
+      = post.created_at
 

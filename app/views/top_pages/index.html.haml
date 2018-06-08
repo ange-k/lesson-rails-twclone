@@ -7,8 +7,12 @@
         = render 'top_pages/micropost', post: @micropost
       - # micropost index
       %hr
-      .post-list
+      #micro-post-list
         - if @posts
           - @posts.each do |post|
-            = render 'microposts/micropost', post: post
+            .row
+              .col-2
+              .col-8
+                = render 'microposts/micropost', post: post
+              .col-2
     %section.recommend.col-3
