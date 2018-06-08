@@ -6,4 +6,9 @@
       - if user_signed_in?
         = render 'top_pages/micropost', post: @micropost
       - # micropost index
+      %hr
+      .post-list
+        - if @posts
+          - @posts.each do |post|
+            = render 'microposts/micropost', post: post
     %section.recommend.col-3

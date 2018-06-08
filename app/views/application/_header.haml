@@ -10,11 +10,14 @@
       %ul.navbar-nav.ml-auto
         %li.nav-item
           = link_to 'Home', root_path, class: 'nav-link'
-        - unless user_signed_in?
+        - if user_signed_in?
+          %li.nav-item
+            = link_to 'Logout', destroy_user_session_path, class: 'nav-link', method: :delete
+          %li.nav-item
+            = link_to "#{current_user.name}", edit_user_registration_path, class: 'nav-link' 
+        - else
           %li.nav-item
             = link_to 'SignUp', new_user_registration_path, id: 'signup-link', class: 'nav-link'
           %li.nav-item
             = link_to 'Login', new_user_session_path, id: 'login-link', class: 'nav-link'
-        - if user_signed_in?
-          %li.nav-item
-            = link_to 'Logout', destroy_user_session_path, class: 'nav-link'
+

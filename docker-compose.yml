@@ -1,6 +1,8 @@
 version: '2'
 services:
   rails: &app_base
+    tty: true           # この二行が必要
+    stdin_open: true    # この二行が必要
     build:
       context: .
       dockerfile: "Dockerfile"
