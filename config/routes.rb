@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'top_pages#index'
   resources :microposts, only: [:create, :show, :destroy]
+  resources :relationships, only: [:create, :destroy]
 
   devise_for :users, :controllers => {
     :sessions => 'users/sessions',

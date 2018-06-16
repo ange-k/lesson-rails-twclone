@@ -13,3 +13,5 @@
         - flash.each do |key, value|
           = content_tag(:div, value, class: "#{key}")
       = yield
+    %footer.footer
+      = switch_user_select

@@ -23,6 +23,7 @@ gem 'erb2haml'
 gem 'devise'
 gem 'cancancan'
 gem 'rails_admin'
+gem 'switch_user'
 
 # bootstrap
 gem 'bootstrap', '~> 4.1.1'
@@ -32,6 +33,8 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'pry-doc'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development do
