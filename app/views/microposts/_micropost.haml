@@ -5,7 +5,7 @@
         = post.user.name
       %span.span-right
         - unless post.user_id == current_user.id
-          - if follows.include?(post.user_id)
+          - if follows.present? && follows.include?(post.user_id)
             = form_for(current_user.relationships.find_by(follow_id: post.user_id), html: { method: :delete }) do |f|
               = f.hidden_field :user_id
               = f.hidden_field :follow_id, value: post.user_id
