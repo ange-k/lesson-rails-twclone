@@ -1,25 +1,29 @@
-.card.tw-card
-  .card-body
-    .twcard-header
-      %h5.card-title
-        = post.user.name
-      %span.span-right
-        - unless post.user_id == current_user.id
-          - if follows.present? && follows.include?(post.user_id)
-            = form_for(current_user.relationships.find_by(follow_id: post.user_id), html: { method: :delete }) do |f|
-              = f.hidden_field :user_id
-              = f.hidden_field :follow_id, value: post.user_id
-              = f.submit 'unfollow', class: 'btn btn-danger'
-          - else
-            = form_for(current_user.relationships.build) do |f|
-              = f.hidden_field :user_id
-              = f.hidden_field :follow_id, value: post.user_id
-              = f.submit 'follow', class: 'btn btn-primary'
-    %h6.card-sub-title.text-muted
-      = "<#{post.user.email}>"
-    %hr
-    %p.card-text
-      = post.content
-    %hr
-    .text-right
-      = post.created_at
+.row
+  .col-2
+  .col-8
+    .card.tw-card
+      .card-body
+        .twcard-header
+          %h5.card-title
+            = post.user.name
+          %span.span-right
+            - unless post.user_id == current_user.id
+              - if follows.present? && follows.include?(post.user_id)
+                = form_for(current_user.relationships.find_by(follow_id: post.user_id), html: { method: :delete }) do |f|
+                  = f.hidden_field :user_id
+                  = f.hidden_field :follow_id, value: post.user_id
+                  = f.submit 'unfollow', class: 'btn btn-danger'
+              - else
+                = form_for(current_user.relationships.build) do |f|
+                  = f.hidden_field :user_id
+                  = f.hidden_field :follow_id, value: post.user_id
+                  = f.submit 'follow', class: 'btn btn-primary'
+        %h6.card-sub-title.text-muted
+          = "<#{post.user.email}>"
+        %hr
+        %p.card-text
+          = post.content
+        %hr
+        .text-right
+          = post.created_at
+  .col-2

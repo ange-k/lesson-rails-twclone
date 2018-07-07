@@ -1,15 +1,14 @@
 class MicropostsController < ApplicationController
   def create
-    post = Micropost.new(micropost_param)
-    if post.save
-      flash = {success: 'ツイートしました'}
-    else
-      flash = {error: 'ツイートに失敗しました'}
-    end
-    redirect_to root_url, flash: flash
+    @post = Micropost.new(micropost_param)
+    @post.save
+    render json: { post: @post }
   end
 
   def show
+    @post = Micropost.find_by(id: params[:id])
+    html = render_to_string partial: 'microposts/micropost', locals: { post: @post }
+    render json: { html: html }
   end
 
   def destroy

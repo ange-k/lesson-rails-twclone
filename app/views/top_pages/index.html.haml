@@ -10,10 +10,5 @@
       #micro-post-list
         - if @posts
           - @posts.each do |post|
-            .row
-              .col-2
-              .col-8
-                = render 'microposts/micropost', post: post, follows: @follow_users
-              .col-2
-          .card-end
+            = render 'microposts/micropost', post: post, follows: @follow_users
     %section.recommend.col-3

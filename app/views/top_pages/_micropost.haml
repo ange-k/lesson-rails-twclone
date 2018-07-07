@@ -1,4 +1,4 @@
-= form_for post, html: {class: 'form-group'} do |f|
+= form_for post, html: {id: 'tweet_form', class: 'form-group'}, data: { remote: true } do |f|
   = f.text_field :content, class: 'form-control micropost-area', placeholder: 'いまなにしてる？'
   = f.hidden_field :user_id
   .text-right
