@@ -18,11 +18,11 @@
     }
   }
 
-  .card-end {
-    margin-bottom: 80px;
-  }
-
   .span-right{
     float: right;
+  }
+
+  .row:nth-last-child(1) {
+    margin-bottom: 80px;
   }
 }
